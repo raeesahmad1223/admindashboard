@@ -7,10 +7,11 @@ import { earningData, SparklineAreaData, ecomPieChartDat } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {
+  const { currentColor } = useStateContext();
   return (
     <div className="mt-12">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full   bg-hero-pattern p-8 pt-9 m-3  bg-no-repeat  bg-cover bg-center ">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full    p-8 pt-9 m-3  bg-no-repeat  bg-cover bg-center ">
           <div className="flex justify-between items-center">
             {/* Div For Adding Prices at top */}
             <div>
@@ -22,7 +23,7 @@ const Ecommerce = () => {
           <div className="mt-4">
             <Button
               color="white"
-              bgColor="dodgerblue"
+              bgColor={currentColor}
               text="Download"
               borderRadius="10px"
             />
@@ -100,20 +101,20 @@ const Ecommerce = () => {
               {/* Chart Div */}
               <div className="mt-5">
                 <SparkLine
-                  currentColor="blue"
+                  currentColor={currentColor}
                   id="sparkline"
                   type="Line"
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
-                  color="blue"
+                  color={currentColor}
                 />
               </div>
               {/* Div for chart button */}
               <div className="mt-10">
                 <Button
                   color="white"
-                  bgColor="dodgerblue"
+                  bgColor={currentColor}
                   text="Download Report"
                   borderRadius="10px"
                 />
